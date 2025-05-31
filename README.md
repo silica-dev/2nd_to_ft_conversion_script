@@ -31,7 +31,7 @@ To generate the mod with **mass_convert.py**, the following must be present for 
 | Better error handling and command line behavior                                   | Short-term goal                      | In Progress      |
 | Better Code Documentation                                                         | Short-term goal                      | In Progress      |
 | Compatibility with F/F2nd/X Chart Packs                                           | Short-term goal                      | In Progress      |
-| YouTube Preview                                                                   | Short-term goal                      | Not Started      |
+| YouTube Preview                                                                   | Short-term goal                      | to start soon      |
 | GameBanana & DivaModArchive Publishing                                                             | Only after above goals are completed | In Progress      |
 | Chance Time version                                                               | Long-term goal                       | To Start Soon    |
 | Chance Time + Technical Zone version                                              | Long-term goal                       | To Start Soon    |
