@@ -1,0 +1,3 @@
+opcodes from nastys' online dsceditor (https://github.com/nastys/nastys.github.io/blob/master/dsceditor/db_pd2.js)
+
+redistribute under GPL v3

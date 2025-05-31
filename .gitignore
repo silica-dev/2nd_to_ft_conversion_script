@@ -1,0 +1,13 @@
+unpacked/
+MM_script_database/
+testfiles/
+__pycache__/
+difficulty_scraper/webpages/
+difficulty_scraper/in.html
+difficulty_scraper/out.txt
+Diva2Script.cpk_unpacked/
+2nd and extend chart pack*/
+*.stackdump
+*.dsc
+*.toml
+*.cpk

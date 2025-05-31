@@ -1,0 +1,430 @@
+{
+  "AGEAGE_CTRL": {
+    "opcode": "105",
+    "len": 8
+  },
+  "AIM": {
+    "opcode": "46",
+    "len": 3
+  },
+  "AOTO_CAP": {
+    "opcode": "97",
+    "len": 1
+  },
+  "AUTO_BLINK": {
+    "opcode": "56",
+    "len": 2
+  },
+  "BAR_TIME_SET": {
+    "opcode": "28",
+    "len": 2
+  },
+  "BLOOM": {
+    "opcode": "93",
+    "len": 2
+  },
+  "CHANGE_FIELD": {
+    "opcode": "14",
+    "len": 1
+  },
+  "CHARA_ALPHA": {
+    "opcode": "96",
+    "len": 4
+  },
+  "CHARA_COLOR": {
+    "opcode": "72",
+    "len": 2
+  },
+  "CHARA_HEIGHT_ADJUST": {
+    "opcode": "60",
+    "len": 2
+  },
+  "CHARA_LIGHT": {
+    "opcode": "103",
+    "len": 3
+  },
+  "CHARA_POS_ADJUST": {
+    "opcode": "62",
+    "len": 4
+  },
+  "CHARA_SIZE": {
+    "opcode": "59",
+    "len": 2
+  },
+  "CLOTH_WET": {
+    "opcode": "50",
+    "len": 2
+  },
+  "COLOR_COLLE": {
+    "opcode": "94",
+    "len": 3
+  },
+  "DATA_CAMERA": {
+    "opcode": "13",
+    "len": 2
+  },
+  "DATA_CAMERA_START": {
+    "opcode": "66",
+    "len": 2
+  },
+  "DOF": {
+    "opcode": "95",
+    "len": 3
+  },
+  "EDIT_BLUSH": {
+    "opcode": "48",
+    "len": 1
+  },
+  "EDIT_CAMERA": {
+    "opcode": "81",
+    "len": 24
+  },
+  "EDIT_DISP": {
+    "opcode": "44",
+    "len": 1
+  },
+  "EDIT_EFFECT": {
+    "opcode": "43",
+    "len": 2
+  },
+  "EDIT_EXPRESSION": {
+    "opcode": "78",
+    "len": 2
+  },
+  "EDIT_EYE": {
+    "opcode": "41",
+    "len": 2
+  },
+  "EDIT_EYELID": {
+    "opcode": "40",
+    "len": 1
+  },
+  "EDIT_EYELID_ANIM": {
+    "opcode": "75",
+    "len": 3
+  },
+  "EDIT_EYE_ANIM": {
+    "opcode": "79",
+    "len": 3
+  },
+  "EDIT_FACE": {
+    "opcode": "30",
+    "len": 1
+  },
+  "EDIT_HAND_ANIM": {
+    "opcode": "45",
+    "len": 2
+  },
+  "EDIT_INSTRUMENT_ITEM": {
+    "opcode": "76",
+    "len": 2
+  },
+  "EDIT_ITEM": {
+    "opcode": "42",
+    "len": 1
+  },
+  "EDIT_LYRIC": {
+    "opcode": "34",
+    "len": 2
+  },
+  "EDIT_MODE_SELECT": {
+    "opcode": "82",
+    "len": 1
+  },
+  "EDIT_MOTION": {
+    "opcode": "27",
+    "len": 4
+  },
+  "EDIT_MOTION_F": {
+    "opcode": "91",
+    "len": 6
+  },
+  "EDIT_MOTION_LOOP": {
+    "opcode": "77",
+    "len": 4
+  },
+  "EDIT_MOT_SMOOTH_LEN": {
+    "opcode": "64",
+    "len": 2
+  },
+  "EDIT_MOUTH": {
+    "opcode": "36",
+    "len": 1
+  },
+  "EDIT_MOUTH_ANIM": {
+    "opcode": "80",
+    "len": 2
+  },
+  "EDIT_MOVE": {
+    "opcode": "38",
+    "len": 7
+  },
+  "EDIT_MOVE_XYZ": {
+    "opcode": "74",
+    "len": 9
+  },
+  "EDIT_SHADOW": {
+    "opcode": "39",
+    "len": 1
+  },
+  "EDIT_TARGET": {
+    "opcode": "35",
+    "len": 5
+  },
+  "EFFECT_OFF": {
+    "opcode": "11",
+    "len": 1
+  },
+  "EFFECT": {
+    "opcode": "9",
+    "len": 6
+  },
+  "END": {
+    "opcode": "0",
+    "len": 0
+  },
+  "EXPRESSION": {
+    "opcode": "22",
+    "len": 4
+  },
+  "EYE_ANIM": {
+    "opcode": "18",
+    "len": 3
+  },
+  "FACE_TYPE": {
+    "opcode": "89",
+    "len": 1
+  },
+  "FADEIN_FIELD": {
+    "opcode": "10",
+    "len": 2
+  },
+  "FADEOUT_FIELD": {
+    "opcode": "17",
+    "len": 2
+  },
+  "FADE_MODE": {
+    "opcode": "55",
+    "len": 1
+  },
+  "FOG": {
+    "opcode": "92",
+    "len": 3
+  },
+  "HAND_ANIM": {
+    "opcode": "20",
+    "len": 5
+  },
+  "HAND_ITEM": {
+    "opcode": "47",
+    "len": 3
+  },
+  "HAND_SCALE": {
+    "opcode": "87",
+    "len": 3
+  },
+  "HIDE_FIELD": {
+    "opcode": "15",
+    "len": 1
+  },
+  "ITEM_ALPHA": {
+    "opcode": "101",
+    "len": 4
+  },
+  "ITEM_ANIM": {
+    "opcode": "61",
+    "len": 4
+  },
+  "ITEM_ANIM_ATTACH": {
+    "opcode": "85",
+    "len": 3
+  },
+  "LIGHT_POS": {
+    "opcode": "88",
+    "len": 4
+  },
+  "LIGHT_ROT": {
+    "opcode": "51",
+    "len": 3
+  },
+  "LOOK_ANIM": {
+    "opcode": "21",
+    "len": 4
+  },
+  "LOOK_CAMERA": {
+    "opcode": "23",
+    "len": 5
+  },
+  "LYRIC": {
+    "opcode": "24",
+    "len": 2
+  },
+  "MAN_CAP": {
+    "opcode": "98",
+    "len": 1
+  },
+  "MIKU_DISP": {
+    "opcode": "4",
+    "len": 2
+  },
+  "MIKU_MOVE": {
+    "opcode": "2",
+    "len": 4
+  },
+  "MIKU_ROT": {
+    "opcode": "3",
+    "len": 2
+  },
+  "MIKU_SHADOW": {
+    "opcode": "5",
+    "len": 2
+  },
+  "MODE_SELECT": {
+    "opcode": "26",
+    "len": 2
+  },
+  "MOUTH_ANIM": {
+    "opcode": "19",
+    "len": 5
+  },
+  "MOVE_CAMERA": {
+    "opcode": "31",
+    "len": 21
+  },
+  "MOVE_FIELD": {
+    "opcode": "16",
+    "len": 3
+  },
+  "MOVIE_CUT_CHG": {
+    "opcode": "102",
+    "len": 2
+  },
+  "MOVIE_DISP": {
+    "opcode": "68",
+    "len": 1
+  },
+  "MOVIE_PLAY": {
+    "opcode": "67",
+    "len": 1
+  },
+  "MUSIC_PLAY": {
+    "opcode": "25",
+    "len": 0
+  },
+  "NEAR_CLIP": {
+    "opcode": "49",
+    "len": 2
+  },
+  "OSAGE_MV_CCL": {
+    "opcode": "71",
+    "len": 3
+  },
+  "OSAGE_STEP": {
+    "opcode": "70",
+    "len": 3
+  },
+  "PARTS_DISP": {
+    "opcode": "57",
+    "len": 3
+  },
+  "PSE": {
+    "opcode": "106",
+    "len": 2
+  },
+  "PV_BRANCH_MODE": {
+    "opcode": "65",
+    "len": 1
+  },
+  "PV_END": {
+    "opcode": "32",
+    "len": 0
+  },
+  "PV_END_FADEOUT": {
+    "opcode": "83",
+    "len": 2
+  },
+  "SATURATE": {
+    "opcode": "54",
+    "len": 1
+  },
+  "SCENE_FADE": {
+    "opcode": "52",
+    "len": 6
+  },
+  "SCENE_ROT": {
+    "opcode": "63",
+    "len": 1
+  },
+  "SET_CAMERA": {
+    "opcode": "12",
+    "len": 6
+  },
+  "SET_CHARA": {
+    "opcode": "37",
+    "len": 1
+  },
+  "SET_MOTION": {
+    "opcode": "7",
+    "len": 4
+  },
+  "SET_PLAYDATA": {
+    "opcode": "8",
+    "len": 2
+  },
+  "SE_EFFECT": {
+    "opcode": "73",
+    "len": 1
+  },
+  "SHADOWHEIGHT": {
+    "opcode": "29",
+    "len": 2
+  },
+  "SHADOWPOS": {
+    "opcode": "33",
+    "len": 3
+  },
+  "SHADOW_CAST": {
+    "opcode": "90",
+    "len": 2
+  },
+  "SHADOW_RANGE": {
+    "opcode": "86",
+    "len": 1
+  },
+  "SHIMMER": {
+    "opcode": "100",
+    "len": 3
+  },
+  "STAGE_LIGHT": {
+    "opcode": "104",
+    "len": 3
+  },
+  "TARGET": {
+    "opcode": "6",
+    "len": 7
+  },
+  "TARGET_FLAG": {
+    "opcode": "84",
+    "len": 1
+  },
+  "TARGET_FLYING_TIME": {
+    "opcode": "58",
+    "len": 1
+  },
+  "TIME": {
+    "opcode": "1",
+    "len": 1
+  },
+  "TONE_TRANS": {
+    "opcode": "53",
+    "len": 6
+  },
+  "TOON": {
+    "opcode": "99",
+    "len": 3
+  },
+  "WIND": {
+    "opcode": "69",
+    "len": 3
+  }
+}
