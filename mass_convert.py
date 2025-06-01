@@ -13,10 +13,10 @@ FULL_F2ND = 2
 
 # parameters
 EXT_FOLDER = "unpacked"
-OUT = "2nd and extend chart pack\\rom"
+OUT = "2nd and extend chart pack - F2nd Compatible\\rom"
 DIFF_LIST = {"easy": 0, "normal": 1, "hard": 2, "extreme": 3, "ex_extreme": 3}
 PROFILE = NO_CHANCE
-F2ND_COMPAT = False
+F2ND_COMPAT = True
 IGNORE_NORMALIZE = [211]
 
 
