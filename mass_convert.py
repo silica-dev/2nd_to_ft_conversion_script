@@ -13,9 +13,11 @@ FULL_F2ND = 2
 
 # parameters
 EXT_FOLDER = "unpacked"
-OUT = "2nd and extend chart pack - No Chance Time\\rom"
-DIFF_LIST = {"easy": 0, "normal": 1, "hard": 2, "extreme": 3}
+OUT = "2nd and extend chart pack\\rom"
+DIFF_LIST = {"easy": 0, "normal": 1, "hard": 2, "extreme": 3, "ex_extreme": 3}
 PROFILE = NO_CHANCE
+F2ND_COMPAT = False
+IGNORE_NORMALIZE = [211]
 
 
 def get_difficulty(filename):
@@ -37,6 +39,12 @@ if __name__ == "__main__":
         star_conv = json.load(file)
     with open("ft_opcodes_T.json", "rt") as file:
         ft_opcodes_T = json.load(file)
+    with open("compat_ignore.txt", "rt") as file:
+        ex_list = [int(line.strip()) for line in file.readlines()]
+    with open("basegame_to_f2nd.json", "rt") as file:
+        f2nd_conv = json.load(file)
+    mm_scripts = os.listdir("MM_script_database")
+
     # get all scripts to convert
     dir_list = os.listdir(EXT_FOLDER)
     ext_isolate = [
@@ -52,16 +60,27 @@ if __name__ == "__main__":
         score_mode = "ARCADE"
 
     for script in dir_list:
+        song_difficulty = get_difficulty(script)
+        song_id_ext = f"{mm_merge.get_id(script)}"
+        song_id = id_conv[f"{song_id_ext}"]
+        f2nd_id = None
+        if song_id in ex_list and F2ND_COMPAT:
+            if song_difficulty == "extreme":
+                song_difficulty = "ex_extreme"
+                f2nd_id = f2nd_conv.get(f"{song_id}", None)
+            else:
+                continue
         # convert script and merge it with megamix script
         with open(EXT_FOLDER + "\\" + script, "rb") as file:
             ext = ext_to_FT.load_dsc(
-                file, ext_opcodes, False, ext_isolate, normalize=True
+                file,
+                ext_opcodes,
+                False,
+                ext_isolate,
+                normalize=(song_id not in IGNORE_NORMALIZE),
             )
         ext = ext_to_FT.nc_convert(ext)
-        merged = mm_merge.mm_merge(script, ext_commands=ext)
-        song_id_ext = f"{mm_merge.get_id(script)}"
-        song_id = id_conv[f"{song_id_ext}"]
-        song_difficulty = get_difficulty(script)
+        merged = mm_merge.mm_merge(script, ext_commands=ext, f2nd_id=f2nd_id)
         if merged is None:
             print(
                 f"WARNING: PV_{song_id}_{song_difficulty} could not be converted or merged"
@@ -76,7 +95,6 @@ if __name__ == "__main__":
         if song_id not in nc_db.keys():
             nc_db[song_id] = {}
         nc_db[song_id][song_difficulty] = [
-            {"style": "ARCADE"},
             {
                 "style": "CONSOLE",
                 "script_file_name": f"rom/script_nc/pv{song_id}/pv_{song_id}_{song_difficulty}.dsc",
@@ -84,6 +102,9 @@ if __name__ == "__main__":
                 "score_mode": score_mode,
             },
         ]
+        if song_difficulty != "ex_extreme" or f"pv_{song_id:03}_extreme_1.dsc" in mm_scripts:
+            nc_db[song_id][song_difficulty].append({"style": "ARCADE"})
+        
         # write to folder
         os.makedirs(OUT + f"\\script_nc\\pv{song_id}", exist_ok=True)
         with open(

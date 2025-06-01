@@ -13,6 +13,8 @@ The following parameters can be defined in **mass_convert.py** to change the beh
 * `OUT`: the folder to generate the mod in
 * `DIFF_LIST`: a dictionary of difficulty names and their corresponding indicies in each entry of `star_conv.json`
 * `PROFILE`: the conversion profile. currently, only `NO_CHANCE` is implemented
+* `F2ND_COMPAT`: whether to generate the mod with compatibility with the F2nd song pack in mind. For this to work, the F2nd mod pack extreme chart of each overlapping song must be present in `F2nd_scripts`
+* `IGNORE_NORMALIZE`: by default, every song is normalized such that the music starts playing at time zero. If that causes issues, add the song's MM+ id to this list.
 
 To generate the mod with **mass_convert.py**, the following must be present for each chart to be converted:
 * a 2nd/extend-styled chart in `EXT_FOLDER` titled in the format `pv_{song_id}_{song_difficulty}.dsc`
@@ -23,14 +25,18 @@ To generate the mod with **mass_convert.py**, the following must be present for 
 ## Limitations
 * `mass_convert.py` does not generate a `config.toml` as is required by DivaModManager. There are no plans to change this
 * If the MM+ script starts playing music after time 0, the produced script will very likely be off sync. This may be changed in the future if such a case is found
-* The produced mod is not compatible with any chart packs that include charts for any songs converted by the script. A fix is currently in the works.
+* The produced mod does not have electric angel, for whatever reason. A fix is currently in the works
+* New Classics does not allow you to create an ex_extreme for charts that do not have arcade ex_extremes, so paradichlorobenzene and SPiCa are not present in the F2nd compatible version. This problem is still being investigated.
+* many 2nd/extend charts are slightly off-sync. Manual adjustment is required, but a solution to somewhat automate the process is in the works
 
 ## Future Plans
 | Item                                                                              | Planned Timeline                     | Current Progress |
 |-----------------------------------------------------------------------------------|--------------------------------------|------------------|
 | Better error handling and command line behavior                                   | Short-term goal                      | In Progress      |
 | Better Code Documentation                                                         | Short-term goal                      | In Progress      |
-| Compatibility with F/F2nd/X Chart Packs                                           | Short-term goal                      | In Progress      |
+| Compatibility with F/F2nd/X Chart Packs                                           | Short-term goal                      | Mostly Done      |
+| Fix Electric Angel                                   | Short-term goal                      | In Progress      |
+| Fix Sync Errors                                   | Short-term goal                      | In Progress      |
 | YouTube Preview                                                                   | Short-term goal                      | to start soon      |
 | GameBanana & DivaModArchive Publishing                                                             | Only after above goals are completed | In Progress      |
 | Chance Time version                                                               | Long-term goal                       | To Start Soon    |

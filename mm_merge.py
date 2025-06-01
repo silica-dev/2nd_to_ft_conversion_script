@@ -4,6 +4,10 @@ import os
 import re
 import json
 
+GLOBAL = 0
+FAILURE = 1
+SUCCESS = 2
+
 
 def get_id(filename):
     base = os.path.basename(filename)
@@ -14,7 +18,20 @@ def get_id(filename):
     return id
 
 
-def mm_merge(filename, id=None, ext_commands=None):
+def isolate_failure(commands):
+    cur_branch = GLOBAL
+    out = []
+    for command in commands:
+        if command[0] == "PV_BRANCH_MODE":
+            cur_branch = command[1][0]
+            if command[1][0] == 0:
+                out.append(command)
+        elif cur_branch == GLOBAL or cur_branch == FAILURE:
+            out.append(command)
+    return out
+
+
+def mm_merge(filename, id=None, ext_commands=None, f2nd_id=None):
     if id is None:
         id = get_id(filename)
     # predefined jsons
@@ -28,6 +45,8 @@ def mm_merge(filename, id=None, ext_commands=None):
     id = id_conv[f"{id}"]
 
     mm_filename = f"MM_script_database\\pv_{id:03}_extreme.dsc"
+    if f2nd_id is not None:
+        mm_filename = f"F2nd_scripts\\pv_{f2nd_id}_extreme.dsc"
     mm_commands = []
     if ext_commands is None:
         with open(filename, "rb") as file:
@@ -44,13 +63,14 @@ def mm_merge(filename, id=None, ext_commands=None):
                 "MODE_SELECT",
                 "TARGET",
                 "TARGET_FLYING_TIME",
-                "BAR_TIME_SET",
                 "END",
             ],
             prefix=1,
         )
         if mm_commands is None:
             return
+    # isolate failure branch
+    mm_commands = isolate_failure(mm_commands)
     # convert to stacks
     ext_commands.reverse()
     mm_commands.reverse()
