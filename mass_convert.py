@@ -13,10 +13,10 @@ FULL_F2ND = 2
 
 # parameters
 EXT_FOLDER = "unpacked"
-OUT = "2nd and extend chart pack - F2nd Compatible\\rom"
+OUT = "2nd and extend chart pack\\rom"
 DIFF_LIST = {"easy": 0, "normal": 1, "hard": 2, "extreme": 3, "ex_extreme": 3}
 PROFILE = NO_CHANCE
-F2ND_COMPAT = True
+F2ND_COMPAT = False
 IGNORE_NORMALIZE = [211]
 
 
@@ -102,9 +102,12 @@ if __name__ == "__main__":
                 "score_mode": score_mode,
             },
         ]
-        if song_difficulty != "ex_extreme" or f"pv_{song_id:03}_extreme_1.dsc" in mm_scripts:
+        if (
+            song_difficulty != "ex_extreme"
+            or f"pv_{song_id:03}_extreme_1.dsc" in mm_scripts
+        ):
             nc_db[song_id][song_difficulty].append({"style": "ARCADE"})
-        
+
         # write to folder
         os.makedirs(OUT + f"\\script_nc\\pv{song_id}", exist_ok=True)
         with open(

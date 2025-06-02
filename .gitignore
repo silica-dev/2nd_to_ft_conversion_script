@@ -10,6 +10,5 @@ Diva2Script.cpk_unpacked/
 F2nd_scripts/
 *.stackdump
 *.dsc
-*.toml
 *.cpk
 *.zip
