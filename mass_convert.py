@@ -10,12 +10,13 @@ import tomlkit
 NO_CHANCE = 0
 CHANCE_STAR = 1
 FULL_F2ND = 2
+CHALLENGE_TIME = 3
 
 # parameters
 EXT_FOLDER = "unpacked"
 OUT = "2nd and extend chart pack - F2nd Compatible\\rom"
 DIFF_LIST = {"easy": 0, "normal": 1, "hard": 2, "extreme": 3, "ex_extreme": 3}
-PROFILE = NO_CHANCE
+PROFILE = CHALLENGE_TIME
 F2ND_COMPAT = True
 IGNORE_NORMALIZE = [211, 64, 86, 10]
 
@@ -57,7 +58,7 @@ if __name__ == "__main__":
     ]
     if PROFILE != NO_CHANCE:
         ext_isolate.append("MODE_SELECT")
-        score_mode = "F2ND"
+        score_mode = "ARCADE"
     else:
         score_mode = "ARCADE"
 

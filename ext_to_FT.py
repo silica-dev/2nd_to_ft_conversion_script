@@ -123,9 +123,9 @@ def nc_convert(input):
             case "MODE_SELECT":
                 match command[1]:
                     case [3, 1]:
-                        command[1] = [31, 4]
+                        command[1] = [31, 1]
                     case [3, 3]:
-                        command[1] = [31, 5]
+                        command[1] = [31, 3]
                     case _:
                         continue
                 output.append(command)
