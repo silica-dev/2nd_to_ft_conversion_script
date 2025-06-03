@@ -1,5 +1,6 @@
 # Project DIVA 2nd/Extend to Future Tone Converter
 This repository contains the scripts I used to port every song from 2nd/extend to MegaMix+ with the [New Classics mod](https://gamebanana.com/mods/596416). In total, the following scripts are provided:
+* **fix_packaged.py**: fixes the Project DIVA 2nd scripts for *Packaged* to not use a double note.
 * **create_transpose.py:** takes in a json database of script opcodes in the format of `"<id>":{"opcode":"<name>", "len": "<len>"}`, then converts it to one with entries in the format of `"<name>":{"opcode":"<id>", "len": "<len>"}` (internally called a "transpose").
 * **ext_to_FT.py**: contains functions for loading and saving .dsc files when provided opcode databases as described above, as well as converting 2nd/extend style .dsc files to MM+ new classics style ones. When run as a script, it takes in a 2nd/extend .dsc file, strips all commands related to the PV rather than the chart, and outputs a converted file in MM+ new classics style.
 * **generate_csv.py**: contains functions for generating the csv database of long note hold times required for New Classics to function. When run as a script, takes in a New Classics-style .dsc and generates a corresponding csv database.
@@ -22,7 +23,17 @@ To generate the mod with **mass_convert.py**, the following must be present for 
 * a conversion between that song's 2nd/ext ids to its MM+ id in `2nd_ext_to_ft.json`
 * the star level for that chart's difficulty (organized by MM+ id) in `star_conv.json`, following the convention defined by `DIFF_LIST`.
 
+## Manual Time Sync
+You can specify manual time syncs in `timeshift.json`. A negative number increases the delay on notes, while a positive number decreases it. To Sync from two note times manually:
+- Find two notes that occur on the same "beat" in a song
+- Add the note start time and flight time together for the **2nd/extend** chart
+- Add the note start time and flight time together for the **MM+/F2nd Pack** chart
+- Subtract the latter from the former.
+
+Some useful timeshifts have already been specified in this repository
+
 ## Limitations
+* The F2nd compatible version *must* be loaded before the F2nd song pack to function properly.
 * `mass_convert.py` does not generate a `config.toml` as is required by DivaModManager. There are no plans to change this
 * If the MM+ script starts playing music after time 0, the produced script will very likely be off sync. This may be changed in the future if such a case is found
 * The produced mod does not have electric angel, for whatever reason. A fix is currently in the works
@@ -34,8 +45,8 @@ To generate the mod with **mass_convert.py**, the following must be present for 
 |-----------------------------------------------------------------------------------|--------------------------------------|------------------|
 | Better error handling and command line behavior                                   | Short-term goal                      | In Progress      |
 | Better Code Documentation                                                         | Short-term goal                      | In Progress      |
-| Compatibility with F/F2nd/X Chart Packs                                           | Short-term goal                      | Mostly Done      |
-| Fix Electric Angel                                   | Short-term goal                      | In Progress      |
+| Compatibility with F/F2nd/X Chart Packs                                           | Short-term goal                      | Finished      |
+| Fix Electric Angel                                   | Short-term goal                      | Finished      |
 | Fix Sync Errors                                   | Short-term goal                      | In Progress      |
 | YouTube Preview                                                                   | Short-term goal                      | to start soon      |
 | GameBanana & DivaModArchive Publishing                                                             | Only after above goals are completed | In Progress      |

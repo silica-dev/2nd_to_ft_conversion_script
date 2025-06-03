@@ -17,7 +17,7 @@ OUT = "2nd and extend chart pack\\rom"
 DIFF_LIST = {"easy": 0, "normal": 1, "hard": 2, "extreme": 3, "ex_extreme": 3}
 PROFILE = NO_CHANCE
 F2ND_COMPAT = False
-IGNORE_NORMALIZE = [211]
+IGNORE_NORMALIZE = [211, 64, 86, 10]
 
 
 def get_difficulty(filename):
@@ -43,6 +43,8 @@ if __name__ == "__main__":
         ex_list = [int(line.strip()) for line in file.readlines()]
     with open("basegame_to_f2nd.json", "rt") as file:
         f2nd_conv = json.load(file)
+    with open("timeshift.json", "rt") as file:
+        timeshift = json.load(file)
     mm_scripts = os.listdir("MM_script_database")
 
     # get all scripts to convert
@@ -72,12 +74,18 @@ if __name__ == "__main__":
                 continue
         # convert script and merge it with megamix script
         with open(EXT_FOLDER + "\\" + script, "rb") as file:
+            manual_norm = timeshift.get(f"{song_id}", None)
+            if manual_norm is not None:
+                manual_norm = (
+                    manual_norm["f2nd"] if F2ND_COMPAT else manual_norm["normal"]
+                )
             ext = ext_to_FT.load_dsc(
                 file,
                 ext_opcodes,
                 False,
                 ext_isolate,
                 normalize=(song_id not in IGNORE_NORMALIZE),
+                manual_norm=manual_norm,
             )
         ext = ext_to_FT.nc_convert(ext)
         merged = mm_merge.mm_merge(script, ext_commands=ext, f2nd_id=f2nd_id)

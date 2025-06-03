@@ -8,7 +8,15 @@ import json
 #   - filter=True: whether to filter (True) or isolate (False)
 #   - filterList=[]: list of items to filter/isolate
 #   - opcode_dict: dict of opcode names and parameter numbers
-def load_dsc(input, opcode_dict, filter=True, filterlist=[], prefix=0, normalize=False):
+def load_dsc(
+    input,
+    opcode_dict,
+    filter=True,
+    filterlist=[],
+    prefix=0,
+    normalize=False,
+    manual_norm=None,
+):
     for _ in range(prefix):
         input.read(4)
     output = []
@@ -31,8 +39,10 @@ def load_dsc(input, opcode_dict, filter=True, filterlist=[], prefix=0, normalize
         if filter ^ (name in filterlist):
             output.append([name, args])
         opcode = input.read(4)
+    if manual_norm == None:
+        manual_norm = music_start
     if normalize:
-        return normalize_times(output, music_start)
+        return normalize_times(output, manual_norm)
     return output
 
 
@@ -41,7 +51,10 @@ def normalize_times(commands, start_time):
     for command in commands:
         if command[0] == "TIME":
             command[1][0] -= start_time
-        new_list.append(command)
+            if command[1][0] >= 0:
+                new_list.append(command)
+        else:
+            new_list.append(command)
     return new_list
 
 
