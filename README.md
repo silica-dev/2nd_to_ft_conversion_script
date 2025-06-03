@@ -36,24 +36,24 @@ Some useful timeshifts have already been specified in this repository
 * The F2nd compatible version *must* be loaded before the F2nd song pack to function properly.
 * `mass_convert.py` does not generate a `config.toml` as is required by DivaModManager. There are no plans to change this
 * If the MM+ script starts playing music after time 0, the produced script will very likely be off sync. This may be changed in the future if such a case is found
-* The produced mod does not have electric angel, for whatever reason. A fix is currently in the works
-* New Classics does not allow you to create an ex_extreme for charts that do not have arcade ex_extremes, so paradichlorobenzene and SPiCa are not present in the F2nd compatible version. This problem is still being investigated.
-* many 2nd/extend charts are slightly off-sync. Manual adjustment is required, but a solution to somewhat automate the process is in the works
+* many 2nd/extend charts are slightly off-sync. Manual adjustment is required.
+* Some Ex. Extremes in the F2nd compatible version end their PVs at odd times. This is still being investigated
 
 ## Future Plans
 | Item                                                                              | Planned Timeline                     | Current Progress |
 |-----------------------------------------------------------------------------------|--------------------------------------|------------------|
 | Better error handling and command line behavior                                   | Short-term goal                      | In Progress      |
 | Better Code Documentation                                                         | Short-term goal                      | In Progress      |
-| Compatibility with F/F2nd/X Chart Packs                                           | Short-term goal                      | Finished      |
-| Fix Electric Angel                                   | Short-term goal                      | Finished      |
-| Fix Sync Errors                                   | Short-term goal                      | In Progress      |
-| YouTube Preview                                                                   | Short-term goal                      | to start soon      |
-| GameBanana & DivaModArchive Publishing                                                             | Only after above goals are completed | In Progress      |
+| Compatibility with F/F2nd/X Chart Packs                                           | Short-term goal                      | Finished         |
+| Fix Electric Angel                                                                | Short-term goal                      | Finished         |
+| Fix Sync Errors                                                                   | Short-term goal                      | In Progress      |
+| Fix PV End Times                                                                  | Short-term goal                      | In Progress      |
+| YouTube Preview                                                                   | Short-term goal                      | to start soon    |
+| GameBanana & DivaModArchive Publishing                                            | Short-term goal                      | Finished         |
 | Chance Time version                                                               | Long-term goal                       | To Start Soon    |
 | Chance Time + Technical Zone version                                              | Long-term goal                       | To Start Soon    |
 | Project DIVA 1st charts                                                           | Long-term goal                       | Not Started      |
-| Port charts from 2nd/extend DLC that do not have MM+ PVs (GO MY WAY!! & Relations) | Long-term goal                       | Not Started      |
+| Port charts from 2nd DLC that do not have MM+ PVs (GO MY WAY!! & Relations)       | Long-term goal                       | Not Started      |
 
 ## Credits
 `ft_opcodes.json` and `2nd_opcodes.json` were adapted from [nastys' DSC Studio](https://github.com/nastys/nastys.github.io/tree/master/dsceditor). The codebase was also used as reference for some functions in `ext_to_FT.py`. [Samyuu's](https://github.com/samyuu) ScriptEditor was also helpful in determining the implementation differences between some 2nd/extend opcodes and MM+ opcodes. Chart difficulty information in `star_conv.json` was largely provided by [The Project DIVA wiki on Fandom](project-diva.fandom.com).
