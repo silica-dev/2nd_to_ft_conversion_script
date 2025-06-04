@@ -50,8 +50,7 @@ Some useful timeshifts have already been specified in this repository
 | Fix PV End Times                                                                  | Short-term goal                      | In Progress      |
 | YouTube Preview                                                                   | Short-term goal                      | to start soon    |
 | GameBanana & DivaModArchive Publishing                                            | Short-term goal                      | Finished         |
-| Chance Time version                                                               | Long-term goal                       | To Start Soon    |
-| Chance Time + Technical Zone version                                              | Long-term goal                       | To Start Soon    |
+| Chance Time version                                                               | Long-term goal                       | Finished    |
 | Project DIVA 1st charts                                                           | Long-term goal                       | Not Started      |
 | Port charts from 2nd DLC that do not have MM+ PVs (GO MY WAY!! & Relations)       | Long-term goal                       | Not Started      |
 
