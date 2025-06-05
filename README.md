@@ -7,6 +7,9 @@ This repository contains the scripts I used to port every song from 2nd/extend t
 * **mass_convert.py**: performs all required conversion steps for generating a New Classics-style mod of all 2nd/extend .dsc scripts in a given directory. Further details are explained in the [Usage](#usage) section.
 * **mm_merge.py**: provides functions for merging two MegaMix+ .dsc files. when run as a script, takes in a script file (and optionally a manually-specific pv_id), then merges it with its corresponding script in `MM_script_database/`
 * **difficulty_scraper**: contains two scripts, **download_list.py** and **extract_diff.py** which were used to scrape the Project DIVA fandom wiki for song difficulties
+* **fix_pv_db.py**: edits a `mod_pv_db.py` file in-place to make sure its pv IDs are in ascending order.
+* **guess_sync.py**: a script that (usually poorly) attempts to guess the correct offset time between a 2nd/extend chart and a reference chart based on two notes that should theoretically take place at the same time
+* **make_db.py**: Uses a json file of PV IDs with missing difficulties to extract pv_db info for songs missing certain difficulties in arcade style and enabling those difficulties.
 
 ## Usage
 The following parameters can be defined in **mass_convert.py** to change the behavior of mod generation:
