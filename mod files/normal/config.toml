@@ -1,0 +1,7 @@
+enabled = true
+name = "2nd and Extend Chart Pack"
+description = "Adds Console-Style Project DIVA 2nd and Extend charts to the game. Requires New Classics."
+version = "2.2.0"
+date = "03.06.2025"
+author = "silicasandwhich"
+include = ["."]
