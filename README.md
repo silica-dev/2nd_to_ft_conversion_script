@@ -51,17 +51,17 @@ Some useful timeshifts have already been specified in this repository
 ## Future Plans
 | Item                                                                              | Planned Timeline                     | Current Progress |
 |-----------------------------------------------------------------------------------|--------------------------------------|------------------|
+| Port charts from 2nd DLC that do not have MM+ PVs (GO MY WAY!! & Relations)       | Long-term goal                       | To Start Soon    |
 | Better error handling and command line behavior                                   | Short-term goal                      | In Progress      |
 | Better Code Documentation                                                         | Short-term goal                      | In Progress      |
 | Compatibility with F/F2nd/X Chart Packs                                           | Short-term goal                      | Finished         |
 | Fix Electric Angel                                                                | Short-term goal                      | Finished         |
-| Fix Sync Errors                                                                   | Short-term goal                      | In Progress      |
-| Fix PV End Times                                                                  | Short-term goal                      | In Progress      |
-| YouTube Preview                                                                   | Short-term goal                      | to start soon    |
+| Fix Sync Errors                                                                   | Short-term goal                      | Nearly Finished  |
+| Fix PV End Times                                                                  | Short-term goal                      | Nearly Finished  |
 | GameBanana & DivaModArchive Publishing                                            | Short-term goal                      | Finished         |
-| Chance Time version                                                               | Long-term goal                       | Finished    |
+| Chance Time version                                                               | Long-term goal                       | Finished         |
+| YouTube Preview                                                                   | Long-term goal                       | Not Started      |
 | Project DIVA 1st charts                                                           | Long-term goal                       | Not Started      |
-| Port charts from 2nd DLC that do not have MM+ PVs (GO MY WAY!! & Relations)       | Long-term goal                       | Not Started      |
 
 ## Credits
 `ft_opcodes.json` and `2nd_opcodes.json` were adapted from [nastys' DSC Studio](https://github.com/nastys/nastys.github.io/tree/master/dsceditor). The codebase was also used as reference for some functions in `ext_to_FT.py`. [Samyuu's](https://github.com/samyuu) ScriptEditor was also helpful in determining the implementation differences between some 2nd/extend opcodes and MM+ opcodes. Chart difficulty information in `star_conv.json` was largely provided by [The Project DIVA wiki on Fandom](project-diva.fandom.com).
