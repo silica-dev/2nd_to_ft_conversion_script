@@ -19,6 +19,7 @@ The following parameters can be defined in **mass_convert.py** to change the beh
 * `PROFILE`: the conversion profile. currently, only `NO_CHANCE` is implemented
 * `F2ND_COMPAT`: whether to generate the mod with compatibility with the F2nd song pack in mind. For this to work, the F2nd mod pack extreme chart of each overlapping song must be present in `F2nd_scripts`
 * `IGNORE_NORMALIZE`: by default, every song is normalized such that the music starts playing at time zero. If that causes issues, add the song's MM+ id to this list.
+* `END_NORMALIZE`: Ensures PV fadeout time is 1 second before PV end time for indicated songs.
 
 To generate the mod with **mass_convert.py**, the following must be present for each chart to be converted:
 * a 2nd/extend-styled chart in `EXT_FOLDER` titled in the format `pv_{song_id}_{song_difficulty}.dsc`
