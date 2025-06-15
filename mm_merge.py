@@ -31,7 +31,7 @@ def isolate_failure(commands):
     return out
 
 
-def mm_merge(filename, id=None, ext_commands=None, f2nd_id=None):
+def mm_merge(filename, id=None, ext_commands=None, f2nd_id=None, end_normalize=False):
     if id is None:
         id = get_id(filename)
     # predefined jsons
@@ -56,15 +56,19 @@ def mm_merge(filename, id=None, ext_commands=None, f2nd_id=None):
             if ext_commands is None:
                 return
     with open(mm_filename, "rb") as file:
+        filterlist = [
+            "MODE_SELECT",
+            "TARGET",
+            "TARGET_FLYING_TIME",
+            "END",
+        ]
+        if end_normalize:
+            filterlist.append("PV_END_FADEOUT")
+
         mm_commands = ext_to_FT.load_dsc(
             file,
             ft_opcodes,
-            filterlist=[
-                "MODE_SELECT",
-                "TARGET",
-                "TARGET_FLYING_TIME",
-                "END",
-            ],
+            filterlist=filterlist,
             prefix=1,
         )
         if mm_commands is None:
@@ -88,6 +92,17 @@ def mm_merge(filename, id=None, ext_commands=None, f2nd_id=None):
             out.append(mm_commands.pop())
         else:
             out.append(ext_commands.pop())
+    if end_normalize:
+        pv_end_index = out.index(["PV_END", []])
+        time_index = pv_end_index
+        while out[time_index][0] != "TIME":
+            time_index -= 1
+        time = out[time_index][1][0]
+        temp = out[time_index:]
+        out = out[:time_index]
+        out.append(["TIME", [time - 100000]])
+        out.append(["PV_END_FADEOUT", [1000, 0]])
+        out.extend(temp)
     out.append(["END", []])
     return out
 

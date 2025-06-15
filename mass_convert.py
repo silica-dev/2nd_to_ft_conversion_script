@@ -18,6 +18,7 @@ OUT = "2nd and extend chart pack - F2nd Compatible\\rom"
 DIFF_LIST = {"easy": 0, "normal": 1, "hard": 2, "extreme": 3, "ex_extreme": 3}
 PROFILE = CHALLENGE_TIME
 F2ND_COMPAT = True
+END_NORMALIZE = [85]
 IGNORE_NORMALIZE = [211, 64, 86, 10]
 
 
@@ -89,7 +90,12 @@ if __name__ == "__main__":
                 manual_norm=manual_norm,
             )
         ext = ext_to_FT.nc_convert(ext)
-        merged = mm_merge.mm_merge(script, ext_commands=ext, f2nd_id=f2nd_id)
+        merged = mm_merge.mm_merge(
+            script,
+            ext_commands=ext,
+            f2nd_id=f2nd_id,
+            end_normalize=song_id in END_NORMALIZE,
+        )
         if merged is None:
             print(
                 f"WARNING: PV_{song_id}_{song_difficulty} could not be converted or merged"
