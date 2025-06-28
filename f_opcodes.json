@@ -297,7 +297,7 @@
   },
   "102": {
     "opcode": "MOVIE_CUT_CHG",
-    "len": 2
+    "len": 1
   },
   "68": {
     "opcode": "MOVIE_DISP",
@@ -401,7 +401,7 @@
   },
   "6": {
     "opcode": "TARGET",
-    "len": 7
+    "len": 11
   },
   "84": {
     "opcode": "TARGET_FLAG",

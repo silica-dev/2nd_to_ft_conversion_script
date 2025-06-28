@@ -58,6 +58,7 @@ def normalize_times(commands, start_time):
     return new_list
 
 
+# converts 2nd/f style target commands to ft-style target commands. not required with newest update
 def convert_2nd_target(command):
     command[1][1] = command[1][3]
     command[1][2] = command[1][4]
@@ -71,7 +72,7 @@ def convert_2nd_target(command):
     return command
 
 
-def print_dsc(fp, script, opcode_dict_T, prefix=bytearray([23, 37, 18, 21])):
+def print_dsc(fp, script, opcode_dict_T, prefix=bytearray([0x20, 0x02, 0x02, 0x12])):
     # version specifier
     fp.write(prefix)
     for command in script:
@@ -83,9 +84,8 @@ def print_dsc(fp, script, opcode_dict_T, prefix=bytearray([23, 37, 18, 21])):
 
 # converts 2nd/extend charts to new classics style and strips unused times
 def nc_convert(input):
-    output = []
-    prev_command = [None, None]
-    cur_flight_time = 0
+    output = [["PV_BRANCH_MODE", [0]]]
+    prev_command = ["PV_BRANCH_MODE", [0]]
     for command in input:
         match command[0]:
             case "TIME":
@@ -95,9 +95,6 @@ def nc_convert(input):
                 prev_command = command
                 pass
             case "TARGET":
-                if command[1][9] != cur_flight_time:
-                    cur_flight_time = command[1][9]
-                    output.append(["TARGET_FLYING_TIME", [cur_flight_time]])
                 match command[1][0]:
                     # arrows
                     case 6:
@@ -117,7 +114,6 @@ def nc_convert(input):
                         command[1][0] = 35
                     case 11:
                         command[1][0] = 36
-                command = convert_2nd_target(command)
                 output.append(command)
                 prev_command = command
             case "MODE_SELECT":
