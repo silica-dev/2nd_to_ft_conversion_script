@@ -12,10 +12,10 @@ CHALLENGE_TIME = 3
 
 # parameters
 EXT_FOLDER = "unpacked"
-OUT = "2nd and extend chart pack - F2nd Compatible\\rom"
+OUT = "2nd and extend chart pack\\rom"
 DIFF_LIST = {"easy": 0, "normal": 1, "hard": 2, "extreme": 3, "ex_extreme": 3}
 PROFILE = CHALLENGE_TIME
-F2ND_COMPAT = True
+F2ND_COMPAT = False
 END_NORMALIZE = [85]
 IGNORE_NORMALIZE = [211, 64, 86, 10]
 
